@@ -1,0 +1,71 @@
+cisco@cisco-VirtualBox:~$ sudo useradd student 
+useradd: пользователь "student" уже существует 
+cisco@cisco-VirtualBox:~$ sudo passwd student
+Введите новый пароль UNIX:
+Sorry, passwords do not match 
+passwd: Ошибка при операциях с маркером проверкиподлинности
+passwd: пароль не изменён 
+cisco@cisco-VirtualBox:~$ student 
+student: команда не найдена 
+cisco@cisco-VirtualBox:~$ sudo passwd student 
+Введите новый пароль UNIX:
+Повторите ввод нового пароля UNIX:
+passwd: пароль успешно обновлён 
+cisco@cisco-VirtualBox:~$ sudo -i
+[sudo] пароль для cisco:
+root@cisco-VirtualBox:~$# sudo userdel student
+userdel: user student is currently used by process 21784
+root@cisco-VirtualBox:~# su student
+student@cisco-VirtualBox:/root$
+cisco@cisco-VirtualBox:~$ su student
+Пароль:
+student@cisco-VirtualBox:/home/cisco$ whoami
+student 
+student@cisco-VirtualBox:/home/cisco$ sudo whoami
+[sudo] пароль для student:
+student отсутствует в файле sudoers. Данное действие будет занесено в журнал.
+student@cisco-VirtualBox:/home/cisco$ logout
+bash: logout: оболочка не является запущенной после входа в систему: используйте 
+`exit'
+student@cisco-VirtualBox:/home/cisco$ exit
+exit
+cisco@cisco-VirtualBox:~$
+#net.ipv4.conf.all.forwarding=1
+# /etc/sysctl.conf - Configuration file for setting system variables
+# See /etc/sysctl.d/ for additional system variables.
+# See sysctl.conf (5) for information.
+#
+
+#kernel.domainname = example.com
+
+#####################################################################3
+# Functions previously found in netbase
+#
+
+# Uncomment the next two lines to enable Spoof protection (reverse-path filter)
+# Turn on Source Address Verification in all interfaces to
+# prevent some spoofing attacks
+#net.ipv4.conf.default.rp_filter=1
+#net.ipv4.conf.all.forwarding=1
+# /etc/sysctl.conf - Configuration file for setting system variables
+# See /ect/sysctl.d/ for additional system variables.
+# See sysctl.conf (5) for information.
+#
+
+#kernel.domainname = example.com
+
+# Uncomment the following to stop low-level messages on console
+#kernel.printk = 3 4 1 3 
+iptables -t nat -A POSTROUTING -s 192.168.99.0/24 -j SNAT --to-source 172.16.16$
+
+#################################################################################3
+# Functions previously found in netbase 
+#
+
+# Uncomment the next two lines to enable Spoof protection (reverse-path filter)
+# Turn on Source Address Verification in all interfaces to
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/$
+https_proxy="http://user:pass@proxy:port/"
+http_proxy="http://user:pass@proxy:port/"
+ftp_proxy="ftp://user:pass@proxy:port/"
+socks_proxy="socks://user:pass@proxy:port/"
